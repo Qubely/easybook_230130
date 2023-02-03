@@ -1,0 +1,12 @@
+@charset "UTF-8";
+header {height:40px;}
+.header {height:40px;}
+
+a {text-decoration:none; color:#000;}
+a:hover {text-decoration:none; color:#000;}
+
+.category:hover {background-color:#333;}
+
+.menu2 {font-size:small;}
+
+.search-category {font-size:x-small;}
