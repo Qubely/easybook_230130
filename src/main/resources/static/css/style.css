@@ -11,3 +11,12 @@ a:hover {text-decoration:none; color:#000;}
 
 .search-box {width:600px;}
 .search-category {font-size:small;}
+
+.main-list {background-color:#999; min-height:250px; max-width:950px;}
+.content-box {width:150px;}
+.category-title {max-height:30px; color:#000;}
+.t-form {font-size:15px; font-weight:bold;}
+.i-form {font-size:13px; font-weight:bold; color:#333;}
+
+.box-gap {gap:15px 89px;}
+.category-menu {max-height:500px;}

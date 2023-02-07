@@ -32,8 +32,6 @@ public class TestApiBO {
 			JSONObject jsonObject = (JSONObject)jsonParser.parse(result);
 			JSONArray items = (JSONArray)jsonObject.get("item");
 			
-			
-			
 			for(int i = 0; i < items.size(); i++) {
 				Book book = new Book();
 				JSONObject item = (JSONObject)items.get(i);
@@ -47,7 +45,6 @@ public class TestApiBO {
 				book.setCoverImgUrl((String)item.get("cover"));
 				bookList.add(book);
 			}
-			return bookList;
 			
 		} catch(Exception e) {
 			e.printStackTrace();

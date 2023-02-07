@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,51 +21,12 @@
 
 	<div id="wrap" class="container">
 		<header>
-			<div class="header d-flex bg-secondary justify-content-between">
-				<!-- 메인 로고 -->
-				<div class="d-flex align-items-center ml-3 font-weight-bold">
-					<h3><a href="/main/main_view" class="text-white">EasyBook</a></h3>
-					<!-- 카테고리 -->
-					<nav class="ml-3">
-						<ul class="nav">
-							<li class="nav-item"><a href="#" class="nav-link category text-white">신간도서</a></li>
-							<li class="nav-item"><a href="#" class="nav-link category text-white">국내도서</a></li>
-							<li class="nav-item"><a href="#" class="nav-link category text-white">외국도서</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="d-flex align-items-center">
-					<nav class="mr-2">
-						<ul class="nav">
-							<li class="nav-item"><a href="#" class="nav-link px-1 menu2 text-white">로그인</a></li>
-							<li class="nav-item"><a href="#" class="nav-link px-1 menu2 text-white">회원가입</a></li>
-							<li class="nav-item"><a href="#" class="nav-link px-1 menu2 text-white">마이페이지</a></li>
-							<li class="nav-item"><a href="#" class="nav-link px-1 menu2 text-white">장바구니</a></li>
-							<li class="nav-item"><a href="#" class="nav-link px-1 menu2 text-white">고객센터</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
+			<jsp:include page="../include/header.jsp" />
 		</header>
 		
 		<section>
-			<div class="d-flex justify-content-center mt-4">
-				<div class="search-box">
-					<div class="input-group mb-3">
-						<div class="input-group-prepend col-2 p-0">
-							<select class=" form-control search-category">
-								<option selected value="All">통합검색</option>
-								<option value="Book">국내도서</option>
-								<option value="Foreign">외국도서</option>
-							</select>
-						</div>
-						<input type="text" class="form-control col-9 border-start-0">
-						<div class="input-group-append">
-							<button class="btn btn-secondary" type="button">검색</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			<jsp:include page="../include/searchBar.jsp" />			
+			<jsp:include page="../#{viewName}.jsp" />
 		</section>
 		
 	</div>
