@@ -26,7 +26,7 @@
 		
 		<section>
 			<jsp:include page="../include/searchBar.jsp" />			
-			<jsp:include page="../#{viewName}.jsp" />
+			<jsp:include page="../${viewName}.jsp" />
 		</section>
 		
 	</div>

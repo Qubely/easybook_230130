@@ -62,13 +62,20 @@ public class AladdinApiBO {
 	
 	public List<Book> getKorBook(
 			String maxResult
-			, String start) {
+			, String start
+			, String categoryId) {
 		List<Book> bookList = new ArrayList<>();
 		String search = "이";
+		String cId = "0";
+		
+		if (categoryId != null) {
+			cId = categoryId;
+		}
 		
 		try {
 			URL itemListUrl = new URL("http://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=" + TTBKEY
-					+ "&Query="+ search + "&MaxResults=" + maxResult + "&QueryType=Keyword&Start=" + start + "&SearchTarget=Book&output=JS&Version=20131101");
+					+ "&Query="+ search + "&MaxResults=" + maxResult + "&QueryType=Keyword&Start=" + start
+					+ "&CategoryId=" + cId + "&SearchTarget=Book&output=JS&Version=20131101");
 			BufferedReader bf;
 			bf = new BufferedReader(new InputStreamReader(itemListUrl.openStream(), "UTF-8"));
 			result = bf.readLine();
