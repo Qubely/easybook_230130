@@ -53,9 +53,9 @@
 		<div class="d-flex justify-content-center">
 			<div class="main-list form-control mb-5">
 				<div class="d-flex category-title mb-2">
-					<h4 class="mr-1">국내도서${categoryName}</h4>
+					<h4 class="mr-1">국내도서</h4>
 						<div class="d-flex align-items-end">
-							<small>${categoryId}</small>
+							<small>${categoryName}</small>
 						</div>
 				</div>
 				<div class="box-gap d-flex flex-wrap">
@@ -98,27 +98,14 @@
 
 <script>
 	$(document).ready(function() {
+		// 카테고리 버튼
 		$('.category-btn').on('click', function(e) {
 			e.preventDefault();
 			let categoryId = $(this).data('category-id');
 			let categoryName = $(this).data('category-name');
 			
-			$.ajax({
-				type : "get",
-				url : "/main/kor_books",
-				data : {
-					"categoryId" : categoryId,
-					"categoryName" : categoryName
-				}
-
-				,
-				success : function(data) {
-					location.href = "/main/kor_books?categoryId=" + categoryId
-				},
-				error : function(e) {
-					alert(e);
-				}
-			});
-		});
+			location.href = "/main/kor_books?categoryId=" + categoryId + "&categoryName=" + categoryName
+		});	// 카테고리 버튼 끝
+		
 	});
 </script>

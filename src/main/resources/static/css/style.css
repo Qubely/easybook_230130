@@ -20,3 +20,12 @@ a:hover {text-decoration:none; color:#000;}
 
 .box-gap {gap:15px 89px;}
 .category-menu {max-height:500px;}
+
+.margin-box {margin-top:130px;}
+.login-box {width:500px; background-color:#999;}
+.login-select-box {width:130px; height:35px; background-color:#999; cursor:pointer;}
+#loginBtn {width:90px; height:90px; margin-top:28px;}
+#nMLoginBtn {width:90px; height:90px; margin-top:28px;}
+
+.sign-up-box {min-width:900px;}
+.sign-up-title-box {font-size:25px;}

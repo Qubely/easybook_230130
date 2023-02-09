@@ -98,7 +98,7 @@
 		<div class="d-flex category-title mb-2">
 			<h4 class="mr-1">외국도서</h4>
 			<div class="d-flex align-items-end">
-				<small><a href="#">더보기></a></small>
+				<small><a href="/main/foreign_books">더보기></a></small>
 			</div>
 		</div>
 		<div class="d-flex justify-content-around">

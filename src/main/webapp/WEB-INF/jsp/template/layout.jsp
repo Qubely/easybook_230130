@@ -25,8 +25,15 @@
 		</header>
 		
 		<section>
-			<jsp:include page="../include/searchBar.jsp" />			
-			<jsp:include page="../${viewName}.jsp" />
+			<c:choose>
+				<c:when test="${fn:contains(viewName, 'user')}">
+					<jsp:include page="../${viewName}.jsp" />
+				</c:when>
+				<c:otherwise>
+					<jsp:include page="../include/searchBar.jsp" />			
+					<jsp:include page="../${viewName}.jsp" />
+				</c:otherwise>
+			</c:choose>
 		</section>
 		
 	</div>

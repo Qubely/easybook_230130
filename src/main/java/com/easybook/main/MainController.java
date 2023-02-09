@@ -31,7 +31,7 @@ public class MainController {
 		List<Book> korBookList = aladdinApiBO.getKorBook("5", "1", "0");
 		model.addAttribute("korBookList", korBookList);
 		
-		List<Book> foreginBookList = aladdinApiBO.getForeignBook("5", "1");
+		List<Book> foreginBookList = aladdinApiBO.getForeignBook("5", "1", "0");
 		model.addAttribute("foreginBookList", foreginBookList);
 		
 		return "template/layout";
@@ -47,6 +47,7 @@ public class MainController {
 		
 		List<Book> korBookList = aladdinApiBO.getKorBook("8", "1", categoryId);
 		model.addAttribute("korBookList", korBookList);
+		
 		model.addAttribute("categoryId", categoryId);
 		model.addAttribute("categoryName", categoryName);
 		
@@ -64,11 +65,16 @@ public class MainController {
 	}
 	
 	@GetMapping("/foreign_books")
-	public String foreignBooks(Model model) {
+	public String foreignBooks(
+			Model model
+			, @RequestParam(value="categoryId", required=false) String categoryId
+			, @RequestParam(value="categoryName", required=false) String categoryName) {
 		model.addAttribute("viewName", "main/foreignBooks");
 		
-		List<Book> foreignBookList = aladdinApiBO.getForeignBook("8", "1");
+		List<Book> foreignBookList = aladdinApiBO.getForeignBook("8", "1", categoryId);
 		model.addAttribute("foreignBookList", foreignBookList);
+		
+		model.addAttribute("categoryName", categoryName);
 		
 		return "template/layout";
 	}
