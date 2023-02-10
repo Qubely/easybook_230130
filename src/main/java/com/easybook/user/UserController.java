@@ -13,8 +13,6 @@ public class UserController {
 	public String signInView(
 			Model model) {
 		model.addAttribute("viewName", "user/signIn");
-		
-		
 		return "template/layout";
 	}
 	
@@ -22,8 +20,6 @@ public class UserController {
 	public String signUpView(
 			Model model) {
 		model.addAttribute("viewName", "user/signUp");
-		
-		
 		return "template/layout";
 	}
 	

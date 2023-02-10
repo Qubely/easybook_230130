@@ -72,6 +72,42 @@
 			}
 		});	// 회원 로그인, 비회원 주문조회 끝
 		
+		// signUpBtn 클릭 시 회원가입 페이지로
+		$('#signUpBtn').on('click', function() {
+			location.href = "/user/sign_up_view"
+		}); // signUpBtn 클릭 시 회원가입 페이지로 끝
+		
+		// loginBtn 로그인
+		$('#loginBtn').on('click', function() {
+			let loginId = $('#loginId').val().trim();
+			let password = $('#mPassword').val().trim();
+			
+			if (loginId == "") {
+				alert("아이디를 입력해주세요.");
+				return;
+			}
+			if (password == "") {
+				alert("비밀번호를 입력해주세요.");
+				return;
+			}
+			
+			$.ajax({
+				type:"post"
+				, url:"/user/sign_in"
+				, data:{"loginId":loginId, "password":password}
+			
+				, success:function(data) {
+					if (data.code == 1) {
+						location.href = "/main/home";
+					} else {
+						alert(data.errorMessage);
+					}
+				}
+				, error:function(e) {
+					alert("로그인 실패");
+				}
+			});
+		}); // 로그인 끝
 		
 	});
 </script>

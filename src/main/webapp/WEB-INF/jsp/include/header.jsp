@@ -24,7 +24,7 @@
 			<ul class="nav">
 				<li class="nav-item"><a href="/user/sign_in_view"
 					class="nav-link px-1 menu2 text-white">로그인</a></li>
-				<li class="nav-item"><a href="#"
+				<li class="nav-item"><a href="/user/sign_up_view"
 					class="nav-link px-1 menu2 text-white">회원가입</a></li>
 				<li class="nav-item"><a href="#"
 					class="nav-link px-1 menu2 text-white">마이페이지</a></li>
